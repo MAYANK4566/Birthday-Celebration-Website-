@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Birthday Surprise!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-container">
+        <div class="stars"></div>
+        <div class="gift-box-container">
+            <div class="gift-box" id="giftBox">
+                <div class="box-lid">
+                    <div class="ribbon-horizontal"></div>
+                </div>
+                <div class="box-base">
+                    <div class="ribbon-vertical"></div>
+                </div>
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+            </div>
+            <h2 class="surprise-text">Tap to Open Your Surprise! 🎁</h2>
+        </div>
+        
+        <!-- Confetti and balloons will be added here -->
+        <div class="confetti-container" id="confettiContainer"></div>
+        <div class="balloons-container" id="balloonsContainer"></div>
+    </div>
+
+    <!-- Hidden greeting card (will be revealed after gift box opens) -->
+    <div class="greeting-card-page" id="greetingCardPage" style="display: none;">
+        <div class="card-container">
+            <div class="birthday-card" id="birthdayCard">
+                <div class="card-front">
+                    <h3>For Someone Special...</h3>
+                </div>
+                <div class="card-inside">
+                    <h1>Happy Birthday Jeel Didi ! 🎉</h1>
+                    <p class="birthday-message">
+                        Wishing you a day filled with happiness and a year filled with joy!
+                        May all your dreams come true on this special day.
+                    </p>
+                    <button class="next-btn" onclick="goToGallery()">See Your Memories 📸</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

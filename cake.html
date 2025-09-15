@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Virtual Birthday Cake</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cake.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cake-container">
+        <div class="cake-header">
+            <h1>🎂 Make a Wish!</h1>
+            <p id="instructionText">Click "Blow Candles" to make your wish come true!</p>
+        </div>
+        
+        <div class="cake-scene">
+            <!-- Birthday Cake SVG -->
+            <div class="cake-wrapper">
+                <svg class="birthday-cake" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Cake Base -->
+                    <ellipse cx="200" cy="280" rx="180" ry="15" fill="#8B4513" opacity="0.3"/>
+                    
+                    <!-- Bottom Layer -->
+                    <rect x="50" y="200" width="300" height="80" rx="10" fill="#D2691E"/>
+                    <rect x="50" y="200" width="300" height="20" rx="10" fill="#F4A460"/>
+                    
+                    <!-- Middle Layer -->
+                    <rect x="80" y="140" width="240" height="70" rx="8" fill="#CD853F"/>
+                    <rect x="80" y="140" width="240" height="18" rx="8" fill="#DEB887"/>
+                    
+                    <!-- Top Layer -->
+                    <rect x="110" y="90" width="180" height="60" rx="6" fill="#D2691E"/>
+                    <rect x="110" y="90" width="180" height="15" rx="6" fill="#F4A460"/>
+                    
+                    <!-- Decorative Elements -->
+                    <circle cx="120" cy="230" r="8" fill="#FF69B4"/>
+                    <circle cx="160" cy="245" r="6" fill="#00CED1"/>
+                    <circle cx="200" cy="235" r="7" fill="#FFD700"/>
+                    <circle cx="240" cy="250" r="6" fill="#FF69B4"/>
+                    <circle cx="280" cy="225" r="8" fill="#00CED1"/>
+                    
+                    <circle cx="130" cy="170" r="6" fill="#FFD700"/>
+                    <circle cx="170" cy="180" r="5" fill="#FF69B4"/>
+                    <circle cx="210" cy="165" r="7" fill="#00CED1"/>
+                    <circle cx="250" cy="175" r="6" fill="#FFD700"/>
+                    <circle cx="290" cy="160" r="5" fill="#FF69B4"/>
+                    
+                    <circle cx="150" cy="115" r="5" fill="#00CED1"/>
+                    <circle cx="190" cy="125" r="6" fill="#FFD700"/>
+                    <circle cx="230" cy="110" r="5" fill="#FF69B4"/>
+                    <circle cx="270" cy="120" r="4" fill="#00CED1"/>
+                </svg>
+                
+                <!-- Candles -->
+                <div class="candles-container">
+                    <div class="candle" data-candle="0">
+                        <div class="candle-stick"></div>
+                        <div class="flame" id="flame0">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="wax-drip"></div>
+                    </div>
+                    <div class="candle" data-candle="1">
+                        <div class="candle-stick"></div>
+                        <div class="flame" id="flame1">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="wax-drip"></div>
+                    </div>
+                    <div class="candle" data-candle="2">
+                        <div class="candle-stick"></div>
+                        <div class="flame" id="flame2">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="wax-drip"></div>
+                    </div>
+                    <div class="candle" data-candle="3">
+                        <div class="candle-stick"></div>
+                        <div class="flame" id="flame3">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="wax-drip"></div>
+                    </div>
+                    <div class="candle" data-candle="4">
+                        <div class="candle-stick"></div>
+                        <div class="flame" id="flame4">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="wax-drip"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Blow Button -->
+        <div class="cake-controls">
+            <button class="blow-btn" id="blowBtn" onclick="blowCandles()">
+                <span class="btn-text">💨 Blow Candles</span>
+                <div class="btn-particles"></div>
+            </button>
+        </div>
+        
+        <!-- Wish Message (Hidden initially) -->
+        <div class="wish-message" id="wishMessage" style="display: none;">
+            <h2>🌟 Your Wish Has Been Made! 🌟</h2>
+            <p>May all your dreams come true this year!</p>
+            <button class="finale-btn" onclick="goToFinale()">Celebrate! 🎉</button>
+        </div>
+        
+        <!-- Smoke particles container -->
+        <div class="smoke-container" id="smokeContainer"></div>
+        
+        <!-- Sparkles container -->
+        <div class="sparkles-container" id="sparklesContainer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="cake.js"></script>
+</body>
+</html>
